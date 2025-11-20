@@ -310,10 +310,10 @@ LLM output example:
 pip install -r requirements.txt
 ```
 #### Download Datasets
-Beauty dataset here (data\raw_meta_All_Beauty)
+Beauty dataset save here (data\raw_meta_All_Beauty)
 * [Beauty dataset](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/blob/main/raw_meta_All_Beauty/full-00000-of-00001.parquet)
 
-Electronics dataset here (data\raw_meta_Electronics)
+Electronics dataset save here (data\raw_meta_Electronics)
 * [Electronics dataset 1](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/blob/main/raw_meta_Electronics/full-00000-of-00010.parquet)
 * [Electronics dataset 2](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/blob/main/raw_meta_Electronics/full-00001-of-00010.parquet)
 
@@ -384,4 +384,5 @@ Special thanks to:
 * **The open-source ecosystem** — for maintaining all the tools, libraries, and models that made this end-to-end RAG system accessible, reproducible, and high-quality.
 
 Grateful to the entire community for enabling this project.
+
 
