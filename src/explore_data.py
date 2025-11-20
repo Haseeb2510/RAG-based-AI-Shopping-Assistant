@@ -61,15 +61,23 @@ def combine_text(row):
     return ". ".join(p for p in parts if p and p.strip())
 
 def main():
-    df1 = pd.read_parquet(os.path.join(RAW_BEAUTY, "full-00000-of-00001.parquet"))
-    df1['domain'] = 'Beauty'
-    df1["categories"] = df1["title"].apply(get_beauty_categories)
-    df2 = pd.read_parquet(os.path.join(RAW_ELETRONICS, "full-00000-of-00010.parquet"))
-    df2['domain'] = 'Electronics'
-    df3 = pd.read_parquet(os.path.join(RAW_ELETRONICS, "full-00001-of-00010.parquet"))
-    df3['domain'] = 'Electronics'
+    try:
+        df1 = pd.read_parquet(os.path.join(RAW_BEAUTY, "full-00000-of-00001.parquet"))
+        df1['domain'] = 'Beauty'
+        df1["categories"] = df1["title"].apply(get_beauty_categories)
+        df2 = pd.read_parquet(os.path.join(RAW_ELETRONICS, "full-00000-of-00010.parquet"))
+        df2['domain'] = 'Electronics'
+        df3 = pd.read_parquet(os.path.join(RAW_ELETRONICS, "full-00001-of-00010.parquet"))
+        df3['domain'] = 'Electronics'
 
-    df = pd.concat([df1, df2, df3], axis=0, ignore_index=True)
+        df = pd.concat([df1, df2, df3], axis=0, ignore_index=True)
+
+    except FileExistsError as e:
+        print("Files missing download required datasets!", e)
+        raise
+    except Exception as e:
+        print("Error: ", e)
+        raise
 
     print(df.head())
     print(df.info())

@@ -88,6 +88,7 @@ def main():
     plt.tight_layout(pad=0)
     plt.show()
 
+    df = df.drop(columns=["text_lenght"])
     df.to_parquet(os.path.join(WORKED_FOLDER, "cleaned_full_corpus.parquet"), index=False)
     print("💾 Cleaned corpus rich saved with", len(df), "rows.")
 
