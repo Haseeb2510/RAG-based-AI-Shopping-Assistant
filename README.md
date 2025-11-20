@@ -319,9 +319,11 @@ Electronics dataset here (data\raw_meta_Electronics)
 
 ---
 
-# ✔ Build Indices
+# ✔ Build Proper Dataset & Indices
 
 ```
+python -m src.explore_data
+python -m src.clean_data_EDA
 python -m src.tokenization_embeddings
 ```
 
